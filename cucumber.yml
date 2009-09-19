@@ -1,0 +1,4 @@
+default: -r features/support/env.rb -r features/support/plain.rb -r features/step_definitions features/plain 
+selenium: -r features/support/env.rb -r features/support/enhanced.rb -r features/step_definitions features/enhanced features/plain
+autotest: -r features/support/env.rb -r features/support/plain.rb -r features/step_definitions features/plain 
+autotest-all: -r features/support/env.rb -r features/support/plain.rb -r features/step_definitions features/plain
