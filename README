@@ -1,1 +1,3 @@
-TODO
+RTRAK is an attempt a creating a ticketing system in Ruby based on the very widely used
+trac system. There are no plans for SCM integration at this stage. The main area of focus
+is to provide a much better interface for this kind of system.
