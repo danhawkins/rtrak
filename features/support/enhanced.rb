@@ -7,5 +7,5 @@ World(Webrat::Selenium::Matchers)
 
 Before do
   # truncate your tables here, since you can't use transactional fixtures
-  # rake("db:refresh")
+  rake("db:test:prepare")
 end
