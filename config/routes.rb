@@ -4,7 +4,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :users
   
-  
   #authlogic
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
@@ -15,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   #root
-  map.root :controller => "pages"
+  map.root :controller => "dashboards", :action => "show"
 
   #defaults
   map.connect ':controller/:action/:id'
