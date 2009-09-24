@@ -3,9 +3,13 @@ Webrat.configure do |config|
   config.application_environment = :test
 end
 
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
+DatabaseCleaner.strategy = :truncation
+
 World(Webrat::Selenium::Matchers)
 
-Before do
+After do
   # truncate your tables here, since you can't use transactional fixtures
-  rake("db:test:prepare")
+  
 end
