@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
+      t.string :name
       t.string :username
       t.string :email
       t.string :crypted_password
@@ -14,6 +15,8 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :last_login_at
       t.string :current_login_ip
       t.string :last_login_ip
+      
+      t.references :role
       
       t.timestamps
     end

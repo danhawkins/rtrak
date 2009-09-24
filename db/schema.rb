@@ -9,18 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090924014432) do
+ActiveRecord::Schema.define(:version => 20090924192751) do
 
-  create_table "domains", :force => true do |t|
+  create_table "dashboards", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
     t.string   "name"
-    t.text     "description"
-    t.string   "url"
-    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
+    t.string   "name"
     t.string   "username"
     t.string   "email"
     t.string   "crypted_password"
@@ -33,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20090924014432) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,20 +1,9 @@
-<% form_for @user do |f| %>
+<% form_for @user, :builder => LabelFormBuilder do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p> 
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p><%= f.submit @user.new_record? ? "Register" : "Update" %></p>
+  <%= f.text_field :name %>
+  <%= f.text_field :username %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation, :label => "Password confirmation" %>
+  <%= f.submit @user.new_record? ? "Register" : "Update" %>
 <% end %>

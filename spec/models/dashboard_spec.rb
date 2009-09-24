@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Domain do
+describe Dashboard do
   it "should be valid" do
-    Domain.new.should be_valid
+    Dashboard.new.should be_valid
   end
 end

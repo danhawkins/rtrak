@@ -14,6 +14,8 @@ module NavigationHelpers
       new_user_path
     when /the login page/
       login_path
+    when /the dashboard/
+      dashboard_path
     
     # Add more mappings here.
     # Here is a more fancy example:
