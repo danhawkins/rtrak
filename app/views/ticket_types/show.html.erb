@@ -1,0 +1,12 @@
+<% title "Ticket Type" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @ticket_type.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_ticket_type_path(@ticket_type) %> |
+  <%= link_to "Destroy", @ticket_type, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", ticket_types_path %>
+</p>

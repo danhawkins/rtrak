@@ -25,3 +25,16 @@ State.create([
   {:name => 'Duplicate', :openstate => false},
   {:name => 'Invalid', :openstate => false}
 ])
+
+TicketType.create([
+  {:name => 'Bug'},
+  {:name => 'Feature'}
+])
+
+Priority.create([
+  {:name => 'Blocker'},
+  {:name => 'Critical'},
+  {:name => 'Major'},
+  {:name => 'Minor'},
+  {:name => 'Trivial'}
+])

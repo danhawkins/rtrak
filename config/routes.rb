@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :ticket_types
+
   map.resources :states
 
   map.resources :milestones

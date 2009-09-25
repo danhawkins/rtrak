@@ -7,6 +7,8 @@ class CreateTickets < ActiveRecord::Migration
       t.integer :stage_id
       t.integer :milestone_id
       t.integer :owner_id
+      t.integer :parent_id
+      t.integer :ticket_type_id
       t.timestamps
     end
   end

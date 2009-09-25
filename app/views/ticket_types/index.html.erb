@@ -1,0 +1,17 @@
+<% title "Ticket Types" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for ticket_type in @ticket_types %>
+    <tr>
+      <td><%=h ticket_type.name %></td>
+      <td><%= link_to "Show", ticket_type %></td>
+      <td><%= link_to "Edit", edit_ticket_type_path(ticket_type) %></td>
+      <td><%= link_to "Destroy", ticket_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Ticket Type", new_ticket_type_path %></p>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090925220332) do
+ActiveRecord::Schema.define(:version => 20090925224311) do
 
   create_table "dashboards", :force => true do |t|
     t.integer  "user_id"
@@ -62,6 +62,26 @@ ActiveRecord::Schema.define(:version => 20090925220332) do
     t.datetime "updated_at"
   end
 
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "ticket_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tickets", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -69,6 +89,8 @@ ActiveRecord::Schema.define(:version => 20090925220332) do
     t.integer  "stage_id"
     t.integer  "milestone_id"
     t.integer  "owner_id"
+    t.integer  "parent_id"
+    t.integer  "ticket_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
