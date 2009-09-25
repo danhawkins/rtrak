@@ -5,6 +5,10 @@
       <h3><%= current_user.name %></h3>
     <% end %>
     <h1><%= Setting.get('site_name')%></h1>
+    
+    <%- if show_title? -%>
+      <h2><%=h yield(:title) %></h2>
+    <%- end -%>
   </div>
   
   <%= render :partial => "shared/account_panel"%>

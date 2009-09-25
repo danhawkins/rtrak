@@ -9,10 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090925203722) do
+ActiveRecord::Schema.define(:version => 20090925220332) do
 
   create_table "dashboards", :force => true do |t|
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "milestones", :force => true do |t|
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "due_date"
+    t.date     "end_date"
+    t.text     "goals"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "priorities", :force => true do |t|
+    t.string   "name"
+    t.integer  "order"
+    t.string   "colour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,6 +44,31 @@ ActiveRecord::Schema.define(:version => 20090925203722) do
   create_table "settings", :force => true do |t|
     t.string   "key",        :null => false
     t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stages", :force => true do |t|
+    t.string   "name"
+    t.string   "colour"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.boolean  "openstate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "priority_id"
+    t.integer  "stage_id"
+    t.integer  "milestone_id"
+    t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

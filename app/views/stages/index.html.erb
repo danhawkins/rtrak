@@ -1,0 +1,19 @@
+<% title "Stages" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Colour</th>
+  </tr>
+  <% for stage in @stages %>
+    <tr>
+      <td><%=h stage.name %></td>
+      <td><%=h stage.colour %></td>
+      <td><%= link_to "Show", stage %></td>
+      <td><%= link_to "Edit", edit_stage_path(stage) %></td>
+      <td><%= link_to "Destroy", stage, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Stage", new_stage_path %></p>

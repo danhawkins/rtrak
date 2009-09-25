@@ -1,0 +1,28 @@
+<% title "Milestone" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @milestone.name %>
+</p>
+<p>
+  <strong>Start Date:</strong>
+  <%=h @milestone.start_date %>
+</p>
+<p>
+  <strong>Due Date:</strong>
+  <%=h @milestone.due_date %>
+</p>
+<p>
+  <strong>End Date:</strong>
+  <%=h @milestone.end_date %>
+</p>
+<p>
+  <strong>Goals:</strong>
+  <%=h @milestone.goals %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_milestone_path(@milestone) %> |
+  <%= link_to "Destroy", @milestone, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", milestones_path %>
+</p>

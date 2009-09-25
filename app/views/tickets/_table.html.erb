@@ -1,0 +1,23 @@
+<div class="ticket_table">
+  <table cellspacing="1" border="0" width="100%" class="standard">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Priority</th>
+      <th>Stage</th>
+      <th>Milestone</th>
+      <th>Owner</th>
+    </tr>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= link_to ticket.title, edit_ticket_path(ticket) %></td>
+        <td><%=h ticket.description %></td>
+        <td><%=h ticket.priority.name if ticket.priority %></td>
+        <td><%=h ticket.stage.name if ticket.stage %></td>
+        <td><%=h ticket.milestone.name if ticket.milestone %></td>
+        <td><%=h ticket.owner.name if ticket.owner %></td>
+    <% end %>
+  </table>
+  
+  <%= link_to 'New Ticket', new_ticket_url %>
+</div>

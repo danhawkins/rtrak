@@ -1,0 +1,13 @@
+<% form_for @ticket, :builder => LabelFormBuilder do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.text_field :title %>
+  
+  <%= f.text_area :description %>
+  
+  <%= f.collection_select :priority_id, Priority.all, :id, :name %>
+  <%= f.collection_select :stage_id, Stage.all, :id, :name %>
+  <%= f.collection_select :milestone_id, Milestone.all, :id, :name %>
+
+  <%= f.submit @ticket.new_record? ? "Create Ticket" : "Update Ticket" %>
+<% end %>

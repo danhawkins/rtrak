@@ -1,0 +1,20 @@
+<% title "Priority" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @priority.name %>
+</p>
+<p>
+  <strong>Order:</strong>
+  <%=h @priority.order %>
+</p>
+<p>
+  <strong>Colour:</strong>
+  <%=h @priority.colour %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_priority_path(@priority) %> |
+  <%= link_to "Destroy", @priority, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", priorities_path %>
+</p>

@@ -1,0 +1,9 @@
+one:
+  name: MyString
+  order: 1
+  colour: MyString
+
+two:
+  name: MyString
+  order: 1
+  colour: MyString

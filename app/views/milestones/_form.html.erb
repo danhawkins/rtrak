@@ -1,0 +1,11 @@
+<% form_for @milestone, :builder => LabelFormBuilder do |f| %>
+  <%= f.error_messages %>
+
+    <%= f.text_field :name %>
+    <%= f.date_select :start_date %>
+    <%= f.date_select :due_date %>
+    <%= f.date_select :end_date %>
+    <%= f.text_area :goals %>
+    
+    <%= f.submit @milestone.new_record? ? "Create Milestone" : "Update Milestone" %>
+<% end %>

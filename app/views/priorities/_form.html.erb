@@ -1,0 +1,16 @@
+<% form_for @priority do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :order %><br />
+    <%= f.text_field :order %>
+  </p>
+  <p>
+    <%= f.label :colour %><br />
+    <%= f.text_field :colour %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

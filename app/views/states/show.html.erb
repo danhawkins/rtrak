@@ -1,0 +1,16 @@
+<% title "State" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @state.name %>
+</p>
+<p>
+  <strong>Openstate:</strong>
+  <%=h @state.openstate %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_state_path(@state) %> |
+  <%= link_to "Destroy", @state, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", states_path %>
+</p>

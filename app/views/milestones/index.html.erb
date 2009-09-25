@@ -1,0 +1,12 @@
+<% title "Milestones" %>
+
+<p><%= link_to "Create Milestone", new_milestone_path %></p>
+
+<% @milestones.each do |milestone| %>
+  <% div_for milestone do %>
+    <h3><%= milestone.name %></h3>
+    <div class="options">
+      <%= link_to 'Edit Milestone', edit_milestone_url(milestone) %>
+    </div>
+  <% end %>
+<% end %>

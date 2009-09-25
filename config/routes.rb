@@ -1,4 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :states
+
+  map.resources :milestones
+
+  map.resources :priorities
+
+  map.resources :stages
+
+  map.resources :tickets
+
   map.resource :dashboard
   map.resources :roles
   

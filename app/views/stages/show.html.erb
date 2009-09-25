@@ -1,0 +1,16 @@
+<% title "Stage" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @stage.name %>
+</p>
+<p>
+  <strong>Colour:</strong>
+  <%=h @stage.colour %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_stage_path(@stage) %> |
+  <%= link_to "Destroy", @stage, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", stages_path %>
+</p>
