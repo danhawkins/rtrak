@@ -1,0 +1,98 @@
+<div id="settings_index" class="mainContent">
+	<h3>Status Description</h3>
+	<% form_for :setting, :url => {:action => 'update'} do |f| %>
+	<table cellspacing="1" cellpadding="2" width="100%" class="cleanTable">
+	<tr>
+		<th>Out of stock message</th>
+		<td><%= f.text_field 'no_stock_message' ,:value => @settings_hash['no_stock_message'] %></td>
+	</tr>
+	
+	<tr>
+		<th>Low stock message</th>
+		<td><%= f.text_field 'low_stock_message' ,:value => @settings_hash['low_stock_message'] %></td>
+	</tr>
+
+	<tr>
+		<th>Low stock threshold</th>
+		<td><%= f.text_field 'low_stock_threshold' ,:value => @settings_hash['low_stock_threshold'] %></td>
+	</tr>
+	<!--><tr>
+		<th>Stock control active</th>
+		<td><%= f.check_box 'stock_control' ,:value => 1,:checked => @settings_hash['stock_control'] == '1' %></td>
+	</tr>-->
+	
+	<tr>
+		<th>Delivery charge</th>
+		<td><%= f.text_field 'delivery_charge' ,:value => @settings_hash['delivery_charge'] %></td>
+	</tr>
+	
+	<tr>
+		<th>Free delivery threshold</th>
+		<td><%= f.text_field 'free_delivery_threshold' ,:value => @settings_hash['free_delivery_threshold'] %></td>
+	</tr>
+	
+	<tr>
+		<th>Orders email</th>
+		<td><%= f.text_field 'orders_email' ,:value => @settings_hash['orders_email'] %></td>
+	</tr>
+	
+	<tr>
+		<th>Admin email</th>
+		<td><%= f.text_field 'admin_email' ,:value => @settings_hash['admin_email'] %></td>
+	</tr>
+	
+	<tr>
+		<th>Support email</th>
+		<td><%= f.text_field 'support_email' ,:value => @settings_hash['support_email'] %></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tableFormButtons">
+		<%= f.submit 'Save Settings' %>
+		</td>
+	</tr>
+	</table>
+	
+	<br />
+	
+	<h3>Announcment Settings</h3>
+	<table cellspacing="1" cellpadding="2" width="100%" class="cleanTable">
+	<tr>
+		<th>Announcment Text</th>
+		<td><%= f.text_area 'announcement_text' ,:value => @settings_hash['announcement_text'],:rows => 5 %></td>
+	</tr>
+	
+	<tr>
+		<th>Expiry Date</th>
+		<td><%= f.text_field 'announcement_expires' ,:value => @settings_hash['announcement_expires'] %></td>
+	</tr>
+
+	<tr>
+		<th>Active</th>
+		<td><%= f.check_box 'announcement_active' ,:value => 1,:checked => @settings_hash['announcement_active'] == '1' %></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tableFormButtons">
+		<%= f.submit 'Save Settings' %>
+		</td>
+	</tr>
+	</table>
+	
+	<h3>Meta Settings</h3>
+	<table cellspacing="1" cellpadding="2" width="100%" class="cleanTable">
+	<tr>
+		<th>Site Description</th>
+		<td><%= f.text_area 'meta-description' ,:value => @settings_hash['meta-description'],:rows => 5 %></td>
+	</tr>
+	
+	<tr>
+		<th>Site Keywords</th>
+		<td><%= f.text_area 'meta-keywords' ,:value => @settings_hash['meta-keywords'],:rows => 5 %></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="tableFormButtons">
+		<%= f.submit 'Save Settings' %>
+		</td>
+	</tr>
+	</table>
+	<% end %>
+</div>

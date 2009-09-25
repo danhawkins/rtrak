@@ -8,8 +8,3 @@ require 'database_cleaner/cucumber'
 DatabaseCleaner.strategy = :truncation
 
 World(Webrat::Selenium::Matchers)
-
-After do
-  # truncate your tables here, since you can't use transactional fixtures
-  
-end

@@ -1,5 +1,5 @@
 Given /^I am not logged in$/ do
-  #no action required
+  puts "nothing happening here, move along"
 end
 
 Given /^I am logged in as a generic user$/ do

@@ -1,0 +1,11 @@
+<div id="header">
+  <div class="info">
+    <%= render :partial => "shared/site_panel"%>
+    <% if current_user %>
+      <h3><%= current_user.name %></h3>
+    <% end %>
+    <h1><%= Setting.get('site_name')%></h1>
+  </div>
+  
+  <%= render :partial => "shared/account_panel"%>
+</div>

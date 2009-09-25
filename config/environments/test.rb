@@ -1,7 +1,7 @@
 # Settings specified here will take precedence over those in config/environment.rb
 config.gem "rspec", :lib => false, :version => ">= 1.2.0" 
 config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0" 
-config.gem "cucumber", :lib => false, :version => ">= 0.3.98"
+config.gem "cucumber", :lib => false, :version => "= 0.3.98"
 config.gem "thoughtbot-factory_girl", :lib    => "factory_girl", :source => "http://gems.github.com"
 config.gem "webrat", :lib => false, :version => ">= 0.5.1"
 config.gem "nokogiri", :lib => false, :version => ">= 1.2.3"

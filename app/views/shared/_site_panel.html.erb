@@ -1,0 +1,7 @@
+<div id="account_panel">
+  <% if current_user %>
+	  Logged in as: <%= current_user.name %>  
+		<%= link_to "Settings", '#' %> | 
+		<%= link_to "Permissions", '#' %>
+	<% end %>
+</div>

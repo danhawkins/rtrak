@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :dashboard
   map.resources :roles
+  
   map.resources :user_sessions
   map.resources :users
   
@@ -11,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   #admin namespace
   map.namespace :admin do |admin|
     admin.resources :users
+    admin.resources :settings
   end
   
   #root
