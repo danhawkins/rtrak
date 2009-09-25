@@ -1,7 +1,11 @@
+/* @override http://localhost:3000/stylesheets/application.css?dev */
+
+/* @group Global */
 body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  background: #dedede;
+  font-family: Helvetica, Arial;
+  font-size: 12px;
+  margin:0;
 }
 
 a img {
@@ -10,23 +14,112 @@ a img {
 
 a {
   color: #0000FF;
+  text-decoration: none;
 }
 
-.clear {
+a:hover{
+	text-decoration: underline;
+}
+
+.clearfix {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+#header{
+	height:100px;
+	background:#ceceef;
+	padding:10px;
 }
 
+#header .info{
+	float: left;
+}
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#page{
+	float: left;
+	width:70%;
+	background: #fff;
+	margin:10px;
+	padding:10px;
+	min-height:450px
+}
+
+#page_content{
+	
+}
+
+#sidebar{
+	float: right;
+	width:22%;
+	padding:10px;
+}
+
+#account_panel{
+	float: right;
+	font-size: 12px;
+}
+
+/* @end */
+
+/* @group Navigation */
+/* -- main navigation -- */
+
+ul.nav, ul.nav li{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+ul.nav li{
+	float:left;
+}
+
+ul.nav li ul.sub li{
+	
+	float:none;
+}
+
+ul.nav li a{
+	margin-right:15px;
+	height:22px;
+	display:block;
+}
+
+ul.nav li a:hover{
+	text-decoration: none;
+}
+
+ul.nav li ul.sub{
+	left:2000px;
+	position:absolute;
+}
+
+ul.nav li:hover .sub{
+	left:auto;
+}
+
+/* @end */
+
+/* @group Tables */
+table.standard th, table.standard td{
+	padding:13px 3px;
+}
+
+table.standard th{
+	text-align: left;
+	border-bottom: 1px solid #aaa;
+}
+
+/* @end */
+
+/* @group Flash Error */
 #flash_notice, #flash_error {
   padding: 5px 8px;
   margin: 10px 0;
@@ -80,7 +173,4 @@ a {
   list-style: disc;
 }
 
-#user_panel{
-	float: right;
-	font-size: 12px;
-}
+/* @end */

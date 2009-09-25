@@ -1,10 +1,10 @@
-<div id="main_nav" class="nav">
-  <ul class="tabs">
+<div id="main_nav">
+  <ul class="nav tabs">
     <li class="tab"><%= link_to 'Overview', '#'%></li>
     
     <li class="tab">
       <%= link_to 'Tickets', tickets_url %>
-      <ul class="sub">
+      <ul class="nav sub">
         <li><%= link_to 'This weeks tickets', '#'%></li>
         <li><%= link_to 'My Tickets', '#' %></li>
       </ul>
@@ -14,7 +14,7 @@
     
     <li>
       <%= link_to 'Milestones', milestones_url %>
-      <ul class="sub">
+      <ul class="nav sub">
         <li><%= link_to 'Sprint 1', '#'%></li>
         <li><%= link_to 'Sprint 2', '#'%></li>
       </ul>
@@ -22,4 +22,5 @@
     
     <!-- milestones will be listed here -->
   </ul>
+  <div class="clearfix"></div>
 </div>
