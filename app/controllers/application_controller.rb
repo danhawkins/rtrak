@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user_session, :current_user
   
+  before_filter :require_user
+  
   private
 
     def current_user_session

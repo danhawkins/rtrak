@@ -9,10 +9,9 @@ class Ticket < ActiveRecord::Base
   belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
   belongs_to :state
   belongs_to :milestone
-  belongs_to :type, :class_name => "TicketType", :foreign_key => "ticket_type"
+  belongs_to :type, :class_name => "TicketType", :foreign_key => "ticket_type_id"
   
   belongs_to :parent, :class_name => "Ticket", :foreign_key => "parent_id"
   has_many :children, :class_name => "Ticket", :foreign_key => "parent_id"
-  
 
 end
