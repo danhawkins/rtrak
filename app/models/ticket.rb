@@ -18,4 +18,16 @@ class Ticket < ActiveRecord::Base
   
   default_scope :include => [:priority,:stage,:owner,:state,:milestone,:type]
 
+  def self.search_using_query(query)
+    
+    #convert from name:dan+age:29 to [['name','dan'],['age','29']]
+    q = query.split(' ').collect {|e| e.split(':') unless e.nil?}
+    #put the array pairs into key value pairs
+    terms_hash = q.inject({}) {|h, (k, v)| h[k] = v; h}
+
+    logger.debug(terms_hash)
+    
+    self.search(terms_hash)
+  end
+
 end
