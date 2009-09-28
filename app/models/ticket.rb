@@ -14,6 +14,8 @@ class Ticket < ActiveRecord::Base
   belongs_to :parent, :class_name => "Ticket", :foreign_key => "parent_id"
   has_many :children, :class_name => "Ticket", :foreign_key => "parent_id"
   
+  has_many :comments, :as => :commentable
+  
   default_scope :include => [:priority,:stage,:owner,:state,:milestone,:type]
 
 end
