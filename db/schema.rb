@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20090925224311) do
     t.datetime "updated_at"
   end
 
+  add_index "milestones", ["id"], :name => "index_milestones_on_id"
+
   create_table "priorities", :force => true do |t|
     t.string   "name"
     t.integer  "order"
@@ -35,11 +37,15 @@ ActiveRecord::Schema.define(:version => 20090925224311) do
     t.datetime "updated_at"
   end
 
+  add_index "priorities", ["id"], :name => "index_priorities_on_id"
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "roles", ["id"], :name => "index_roles_on_id"
 
   create_table "settings", :force => true do |t|
     t.string   "key",        :null => false
@@ -48,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20090925224311) do
     t.datetime "updated_at"
   end
 
+  add_index "settings", ["key"], :name => "index_settings_on_key"
+
   create_table "stages", :force => true do |t|
     t.string   "name"
     t.string   "colour"
@@ -55,12 +63,16 @@ ActiveRecord::Schema.define(:version => 20090925224311) do
     t.datetime "updated_at"
   end
 
+  add_index "stages", ["id"], :name => "index_stages_on_id"
+
   create_table "states", :force => true do |t|
     t.string   "name"
     t.boolean  "openstate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "states", ["id"], :name => "index_states_on_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
@@ -82,6 +94,8 @@ ActiveRecord::Schema.define(:version => 20090925224311) do
     t.datetime "updated_at"
   end
 
+  add_index "ticket_types", ["id"], :name => "index_ticket_types_on_id"
+
   create_table "tickets", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -95,6 +109,15 @@ ActiveRecord::Schema.define(:version => 20090925224311) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tickets", ["id"], :name => "index_tickets_on_id"
+  add_index "tickets", ["milestone_id"], :name => "index_tickets_on_milestone_id"
+  add_index "tickets", ["owner_id"], :name => "index_tickets_on_owner_id"
+  add_index "tickets", ["parent_id"], :name => "index_tickets_on_parent_id"
+  add_index "tickets", ["priority_id"], :name => "index_tickets_on_priority_id"
+  add_index "tickets", ["stage_id"], :name => "index_tickets_on_stage_id"
+  add_index "tickets", ["state_id"], :name => "index_tickets_on_state_id"
+  add_index "tickets", ["ticket_type_id"], :name => "index_tickets_on_ticket_type_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -114,5 +137,8 @@ ActiveRecord::Schema.define(:version => 20090925224311) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["id"], :name => "index_users_on_id"
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
 
 end

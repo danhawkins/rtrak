@@ -6,6 +6,8 @@ class CreatePriorities < ActiveRecord::Migration
       t.string :colour
       t.timestamps
     end
+    
+    add_index :priorities, :id
   end
   
   def self.down

@@ -20,6 +20,9 @@ class CreateUsers < ActiveRecord::Migration
       
       t.timestamps
     end
+    
+    add_index :users, :id
+    add_index :users, :role_id
   end
   
   def self.down

@@ -12,6 +12,15 @@ class CreateTickets < ActiveRecord::Migration
       t.integer :ticket_type_id
       t.timestamps
     end
+    
+    add_index :tickets, :id
+    add_index :tickets, :priority_id
+    add_index :tickets, :stage_id
+    add_index :tickets, :state_id
+    add_index :tickets, :milestone_id
+    add_index :tickets, :owner_id
+    add_index :tickets, :parent_id
+    add_index :tickets, :ticket_type_id
   end
   
   def self.down

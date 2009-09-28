@@ -6,6 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
+
+
 user = User.create(:name => 'Administrator', :username => 'admin', :email => 'admin@hawkinsking.com')
 user.password = user.password_confirmation = 'letmein'
 user.save!

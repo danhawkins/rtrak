@@ -5,6 +5,8 @@ class CreateStages < ActiveRecord::Migration
       t.string :colour
       t.timestamps
     end
+    
+    add_index :stages, :id
   end
   
   def self.down
