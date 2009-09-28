@@ -1,5 +1,5 @@
 class Ticket < ActiveRecord::Base
-  attr_accessible :title, :description, :priority_id, :stage_id, :milestone_id, :owner_id, :ticket_type_id
+  attr_accessible :title, :description, :priority_id, :stage_id, :milestone_id, :owner_id, :ticket_type_id, :tag_list
   
   acts_as_taggable
   
@@ -13,5 +13,7 @@ class Ticket < ActiveRecord::Base
   
   belongs_to :parent, :class_name => "Ticket", :foreign_key => "parent_id"
   has_many :children, :class_name => "Ticket", :foreign_key => "parent_id"
+  
+  default_scope :include => [:priority,:stage,:owner,:state,:milestone,:type]
 
 end

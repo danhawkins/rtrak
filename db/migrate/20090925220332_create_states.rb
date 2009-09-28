@@ -5,8 +5,6 @@ class CreateStates < ActiveRecord::Migration
       t.boolean :openstate
       t.timestamps
     end
-    
-    add_index :states, :id
   end
   
   def self.down

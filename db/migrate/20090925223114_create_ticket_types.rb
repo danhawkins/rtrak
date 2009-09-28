@@ -4,8 +4,6 @@ class CreateTicketTypes < ActiveRecord::Migration
       t.string :name
       t.timestamps
     end
-    
-    add_index :ticket_types, :id
   end
   
   def self.down

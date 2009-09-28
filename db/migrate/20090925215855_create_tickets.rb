@@ -13,7 +13,6 @@ class CreateTickets < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :tickets, :id
     add_index :tickets, :priority_id
     add_index :tickets, :stage_id
     add_index :tickets, :state_id

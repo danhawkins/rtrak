@@ -8,8 +8,6 @@ class CreateMilestones < ActiveRecord::Migration
       t.text :goals
       t.timestamps
     end
-    
-    add_index :milestones, :id
   end
   
   def self.down
