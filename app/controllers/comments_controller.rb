@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter: find_commenter
+  
   def index
     @comments = Comment.all
   end
@@ -12,12 +14,9 @@ class CommentsController < ApplicationController
   end
   
   def create
-    @comment = Comment.new(params[:comment])
-    if @comment.save
-      flash[:notice] = "Successfully created comment."
-      redirect_to @comment
-    else
-      render :action => 'new'
+    @comment = @commenter.comments.create(params[:comments])
+    respond_to do |format|
+      format.html {redirect_to :controller => @commenter.class.to_s.pluralize.downcase, :action => :show, :id => @commenter.id}
     end
   end
   
@@ -41,4 +40,11 @@ class CommentsController < ApplicationController
     flash[:notice] = "Successfully destroyed comment."
     redirect_to comments_url
   end
+  
+  private
+    
+    def find_commenter
+      @klass = params[:commentable_type].capitalize.constantize
+      @commenter = klass.find(params[:commentable_id])
+    end
 end

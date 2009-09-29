@@ -1,19 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :comments
-
-  map.resources :ticket_types
-
-  map.resources :states
-
-  map.resources :milestones
-
-  map.resources :priorities
-
-  map.resources :stages
-
-  map.resources :tickets
-
+  
   map.resource :dashboard
+  
+  map.resources :ticket_types
+  map.resources :states
+  map.resources :milestones
+  map.resources :priorities
+  map.resources :stages
+  map.resources :tickets, :has_many => 'comments'
+  
   map.resources :roles
   
   map.resources :user_sessions
