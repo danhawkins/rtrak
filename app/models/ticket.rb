@@ -23,9 +23,8 @@ class Ticket < ActiveRecord::Base
     #convert from name:dan+age:29 to [['name','dan'],['age','29']]
     q = query.split(' ').collect {|e| e.split(':') unless e.nil?}
     #put the array pairs into key value pairs
-    terms_hash = q.inject({}) {|h, (k, v)| h[k] = v; h}
-
-    logger.debug(terms_hash)
+    #terms_hash = q.inject({}) {|h, (k, v)| h[k] = v; h}
+    terms_hash = Hash[*q]
     
     self.search(terms_hash)
   end
