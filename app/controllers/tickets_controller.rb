@@ -18,6 +18,7 @@ class TicketsController < ApplicationController
   end
   
   def create
+    debugger
     @ticket = Ticket.new(params[:ticket])
     if @ticket.save
       flash[:notice] = "Successfully created ticket."
@@ -32,6 +33,7 @@ class TicketsController < ApplicationController
   end
   
   def update
+    debugger
     @ticket = Ticket.find(params[:id])
     if @ticket.update_attributes(params[:ticket])
       flash[:notice] = "Successfully updated ticket."

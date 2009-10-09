@@ -1,16 +1,34 @@
+
+
+
 <% form_for @ticket, :builder => LabelFormBuilder do |f| %>
   <%= f.error_messages %>
+  
+  
+  <% unless @ticket.new_record? %>
+    <% fields_for :comments do |t| %>
+      <%= t.text_area :body %>
+
+    <% end %>
+  <% end %>
+  
 
   <%= f.text_field :title %>
   
-  <%= f.text_area :description %>
+  <%= f.text_area :description, :rows => 10, :cols => 79 %>
   
-  <%= f.collection_select :ticket_type_id, TicketType.all, :id, :name, :label => 'Type' %>
-  <%= f.collection_select :priority_id, Priority.all, :id, :name %>
-  <%= f.collection_select :stage_id, Stage.all, :id, :name %>
-  <%= f.collection_select :milestone_id, Milestone.all, :id, :name %>
+  <div class="ticket_options">
+    <div class="row">
+      <%= f.collection_select :ticket_type_id, TicketType.all, :id, :name, :label => 'Type' %>
+      <%= f.collection_select :priority_id, Priority.all, :id, :name %>
+    </div>
+    <div class="row">
+      <%= f.collection_select :stage_id, Stage.all, :id, :name %>
+      <%= f.collection_select :milestone_id, Milestone.all, :id, :name %>
+    </div>
+    <div class="clearfix"></div>
+    <%= f.text_field :tag_list, :label => 'Tags' %>
+  </div>
   
-  <%= f.text_field :tag_list, :label => 'Tags' %>
-
   <%= f.submit @ticket.new_record? ? "Create Ticket" : "Update Ticket" %>
 <% end %>
