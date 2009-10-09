@@ -1,17 +1,12 @@
-
-
-
 <% form_for @ticket, :builder => LabelFormBuilder do |f| %>
   <%= f.error_messages %>
   
   
   <% unless @ticket.new_record? %>
-    <% fields_for :comments do |t| %>
-      <%= t.text_area :body %>
-
+    <% fields_for :comment do |t| %>
+      <%= t.text_area :body, :rows => 10, :cols => 79 %>
     <% end %>
   <% end %>
-  
 
   <%= f.text_field :title %>
   
@@ -29,6 +24,10 @@
     <div class="clearfix"></div>
     <%= f.text_field :tag_list, :label => 'Tags' %>
   </div>
+  
+  <% @ticket.comments.each do |comment| %>
+    <p><%= comment.body %></p>
+  <% end %>
   
   <%= f.submit @ticket.new_record? ? "Create Ticket" : "Update Ticket" %>
 <% end %>

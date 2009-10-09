@@ -1,5 +1,5 @@
 class Ticket < ActiveRecord::Base
-  attr_accessible :title, :description, :priority_id, :stage_id, :milestone_id, :owner_id, :ticket_type_id, :tag_list
+  #attr_accessible :title, :description, :priority_id, :stage_id, :milestone_id, :owner_id, :ticket_type_id, :tag_list
   
   acts_as_taggable
   
@@ -17,6 +17,9 @@ class Ticket < ActiveRecord::Base
   has_many :comments, :as => :commentable
   
   default_scope :include => [:priority,:stage,:owner,:state,:milestone,:type]
+  
+  #TODO refactor
+  #accepts_nested_attributes_for :comments, :allow_destroy => true
 
   def self.search_using_query(query)
     
