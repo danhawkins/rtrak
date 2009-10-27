@@ -11,11 +11,11 @@ module NavigationHelpers
     when /the homepage/
       '/'
     when /the user registration page/
-      new_user_url
+      new_user_path
     when /the login page/
-      login_url
+      login_path
     when /the dashboard/
-      dashboard_url
+      dashboard_path
     
     # Add more mappings here.
     # Here is a more fancy example:

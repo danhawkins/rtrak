@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter: find_commenter
+  before_filter :find_commenter
   
   def index
     @comments = Comment.all

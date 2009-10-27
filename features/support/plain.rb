@@ -1,1 +1,1 @@
-Cucumber::Rails.use_transactional_fixtures
+#Cucumber::Rails.use_transactional_fixtures
